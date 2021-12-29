@@ -1,15 +1,15 @@
-import React from 'react'
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/prop-types */
+import React from 'react';
 import Part from './Part';
 
-const Content = (props) => {
-  const { parts } =  props;
+function Content(props) {
+  const { parts } = props;
   return (
-      <>
-      {parts.map((part,i)=>{
-         return <Part name={part.name} exercises={part.exercises} key={`${part.name}_${i}`} />
-      })}
-      </>
-  )
+    <>
+      {parts.map((part, i) => <Part name={part.name} exercises={part.exercises} key={`${part.name}_${i}`} />)}
+    </>
+  );
 }
 
 export default Content;

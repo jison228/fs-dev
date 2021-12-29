@@ -1,12 +1,11 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+import React from 'react';
 
-const Header = (props) => {
-  const { course } =  props;
+function Header(props) {
+  const { course } = props;
   return (
-    <>
-      <h1>{course}</h1>
-    </>
-  )
+    <h1>{course}</h1>
+  );
 }
 
 export default Header;
