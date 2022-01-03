@@ -12,12 +12,35 @@ function Statistics({ stats }) {
   }
   return (
     <div>
-      {Object.keys(stats).map((key) => (
-        <p key={`${key}_keyStat_${stats[key]}`}>{`${key}:${stats[key]}`}</p>
-      ))}
-      <p>{`All:${all}`}</p>
-      <p>{`Average:${stats.Good && stats.Bad ? (stats.Good - stats.Bad) / all : 0}`}</p>
-      <p>{`Positive:${stats.Good && stats.Bad ? stats.Good / all : 0} %`}</p>
+      <table>
+        <tbody>
+          {Object.keys(stats).map((key) => (
+            <tr key={`${key}`}>
+              <td>{key}</td>
+              <td>{stats[key]}</td>
+            </tr>
+          ))}
+          <tr>
+            <td>All</td>
+            <td>{all}</td>
+          </tr>
+          <tr>
+            <td>Average</td>
+            <td>
+              {stats.Good && stats.Bad ? (stats.Good - stats.Bad) / all : 0}
+              %
+            </td>
+          </tr>
+          <tr>
+            <td>All</td>
+            <td>{all}</td>
+          </tr>
+          <tr>
+            <td>Positive</td>
+            <td>{stats.Good && stats.Bad ? stats.Good / all : 0}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
